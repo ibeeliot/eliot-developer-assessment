@@ -7,6 +7,7 @@ class StudentController {
 
     async display(ctx: koa.Context, next: koa.Next) {
         // Work starts here.
+        console.log('HEY from student controller')
     }
 
 }
