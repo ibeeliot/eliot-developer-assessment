@@ -16,6 +16,14 @@ app.use( async (ctx, next) => {
     }
 })
 
+// TODO - delete
+app.use(async (ctx, next) => {
+    const start = Date.now();
+    await next();
+    const ms = Date.now() - start;
+    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+  });
+
 app.use(StudentRouters.routes())
    .use(StudentRouters.allowedMethods())
 
