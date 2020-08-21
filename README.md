@@ -2,6 +2,9 @@
 
 [see Instructions](./Instructions.md)
 
+Download dependences with
+`npm i`
+
 Build and run the application with
 `npm start:watch`
 
