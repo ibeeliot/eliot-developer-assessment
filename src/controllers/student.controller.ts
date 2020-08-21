@@ -2,39 +2,38 @@
 import * as koa from 'koa';
 import * as Router from 'koa-router';
 
+import {assessmentController} from './assessment.controller';
+
 class StudentController {
-    // constructor(){}
 
-    async display(ctx: koa.Context, next: koa.Next) {
-        // Work starts here.
-        console.log('HEY from student controller');
+    async display(ctx: koa.Context) {
+        // // Work starts here.
+        // ctx.body = `Student 1 has these assessment: 
+        // ${JSON.stringify(ctx.state)}
+        // `;
+        ctx.body=ctx.state;
     }
-
 }
+
 export const studentController = new StudentController();
 
-// TODO - delete
-const testController = async(ctx: koa.Context, next: koa.Next) => {
-    const testDialogue = await ctx.body;
-    console.log('!!! this is context body', testDialogue);
-} 
-
-class TestController {
-    // constructor(){}
-    async display(ctx: koa.Context, next: koa.Next) {
-        // Work starts here.
-        console.log('HEY from test controller');
-    }
-}
-export const test = new TestController();
-//
-// Simple routing logic
-//
 const router = new Router()
 
-// TODO - delete
-router.get('/', test.display)
+class TestController {
 
-router.get('/student/display/:studentid', studentController.display)
+    async display(ctx: koa.Context) {
+        // // Work starts here.
+        // ctx.body = `Student 1 has these assessment: 
+        // ${JSON.stringify(ctx.state)}
+        // `;
+        ctx.body='Hello World';
+    }
+}
+
+export const testController = new TestController;
+
+router.get('/', testController.display);
+
+router.get('/student/display/:studentid', assessmentController.normalizeData, studentController.display)
 
 export const StudentRouters = router;

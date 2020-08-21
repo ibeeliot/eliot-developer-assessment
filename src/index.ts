@@ -19,12 +19,20 @@ app.use( async (ctx, next) => {
 // TODO - delete
 app.use(async (ctx, next) => {
     const start = Date.now();
-    await next();
-    const ms = Date.now() - start;
-    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+    try {
+        const ms = await Date.now() - start;
+        console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+        await next();
+    } catch(err) {
+        console.log(err.status)
+        ctx.status = err.status || 500;
+        ctx.body = err.message;
+    }
   });
 
 app.use(StudentRouters.routes())
    .use(StudentRouters.allowedMethods())
 
 app.listen(1234, () => console.log('running on port 1234'))
+
+export default app

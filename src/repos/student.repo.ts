@@ -36,6 +36,7 @@ const student1 = {
             created_by: null,
             updated_by: null
         },
+        // Example Expired
         {
             id: 2,
             name: "Silly-Questions set 2",
@@ -53,6 +54,7 @@ const student1 = {
             created_by: null,
             updated_by: null
         },
+        // Example In Progress
         {
             id: 3,
             name: "Exam-2",
@@ -120,7 +122,44 @@ const student1 = {
             updated_at: "2020-07-21T04:19:44.000Z",
             created_by: null,
             updated_by: null
-        }
+        },
+        
+        // Example Upcoming
+        {
+            id: 7,
+            name: "Exam-AE",
+            description: "NCE-2020:Exam-AE",
+            open_time: "2020-10-05T00:00:00.000Z",
+            close_time: "2029-10-05T00:00:00.000Z",
+            time_limit: "100",
+            version_number: 0,
+            version_name: null,
+            parent_assessment: null,
+            type: null,
+            is_locked: false,
+            created_at: "2020-07-21T04:19:44.000Z",
+            updated_at: "2020-07-21T04:19:44.000Z",
+            created_by: null,
+            updated_by: null
+        },
+         // Example Open
+         {
+            id: 7,
+            name: "Exam-AE",
+            description: "NCE-2020:Exam-AE",
+            open_time: "2020-10-05T00:00:00.000Z",
+            // close_time: "2029-10-05T00:00:00.000Z",
+            time_limit: "100",
+            version_number: 0,
+            version_name: null,
+            parent_assessment: null,
+            type: null,
+            is_locked: false,
+            created_at: "2020-07-21T04:19:44.000Z",
+            updated_at: "2020-07-21T04:19:44.000Z",
+            created_by: null,
+            updated_by: null
+        },
     ]
 }
 
