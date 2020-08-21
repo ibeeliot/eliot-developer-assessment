@@ -6,7 +6,7 @@ Download dependences with
 `npm i`
 
 Build and run the application with
-`npm start:watch`
+`npm run start:watch`
 
 Run tests with
 `npm run test`
